@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:title="Search"
+        android:visible="false"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/app_bar_bell"
+        android:visible="false"
+        android:checkable="true"
+        android:icon="@drawable/ic_baseline_notification"
+        android:title="notification"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/app_bar_view"
+        android:visible="false"
+        android:checkable="true"
+        android:icon="@drawable/toggle_view"
+        android:title="View"
+        app:showAsAction="ifRoom" />
+    <item
+        android:icon="@drawable/ic_photo_camera_24dp"
+        android:title="Item"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+</menu>

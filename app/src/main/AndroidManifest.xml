@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.cgs.vision">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label=""
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+        <activity android:name="com.cgs.vision.dialogos.DialogPersonas"
+            android:excludeFromRecents="true"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name="com.cgs.vision.dialogos.DialogPeticiones"
+            android:excludeFromRecents="true"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name="com.cgs.vision.ui.Publicacion"
+            android:theme="@style/prueba" />
+        <activity
+            android:name="com.cgs.vision.CPublico"
+            android:theme="@style/prueba" />
+        <activity
+            android:name="com.cgs.vision.dialogos.SelectDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name="com.cgs.vision.dialogos.GrupoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name="com.cgs.vision.ui.Registro"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cgs.vision.ui.Login"
+            android:label="picAcode"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cgs.vision.ui.Result"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cgs.vision.ui.MenuMain"
+            android:label="PRINCIPAL"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name="com.cgs.vision.ui.CloudVision"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.cgs.vision.ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- android:name="android.support.v4.content.FileProvider" -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

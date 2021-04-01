@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.cgs.vision.ui.HomeFragment"
+        android:label="@string/menu_private"
+        tools:layout="@layout/fragment_home_online">
+        <action
+            android:id="@+id/action_nav_home_to_first2Fragment"
+            app:destination="@id/Repositorio" />
+        <action
+            android:id="@+id/action_nav_home_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_cPublicos"
+        android:name="com.cgs.vision.ui.MisCPublicosFragment"
+        android:label="@string/menu_public"
+        tools:layout="@layout/fragment_repositorio_publico" >
+        <action
+            android:id="@+id/action_nav_gallery_to_codigoPublicoFragment"
+            app:destination="@id/codigoPublicoFragment" />
+        <action
+            android:id="@+id/action_nav_cPublicos_to_CPublico"
+            app:destination="@id/CPublico" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_explorar"
+        android:name="com.cgs.vision.ui.ExplorarFragment"
+        android:label="@string/menu_explore"
+        tools:layout="@layout/fragment_explorar" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_codigoPublicoFragment"
+            app:destination="@id/codigoPublicoFragment" />
+        <action
+            android:id="@+id/action_nav_explorar_to_filtros"
+            app:destination="@id/filtros" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_favoritos"
+        android:name="com.cgs.vision.ui.Favoritos"
+        android:label="@string/menu_favorites"
+        tools:layout="@layout/fragment_favoritos" >
+        <action
+            android:id="@+id/action_nav_favoritos_to_codigoPublicoFragment"
+            app:destination="@id/codigoPublicoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/Repositorio"
+        android:name="com.cgs.vision.ui.Repositorio"
+        android:label="{tipo}"
+        tools:layout="@layout/fragment_first2" >
+        <argument
+            android:name="tipo"
+            app:argType="string"
+            android:defaultValue='default' />
+        <action
+            android:id="@+id/Repositorio_to_repositorioPrivado"
+            app:destination="@id/repositorioPrivado"/>
+    </fragment>
+    <fragment
+        android:id="@+id/codigoPublicoFragment"
+        android:name="com.cgs.vision.CodigoPublicoFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_codigo_publico" >
+        <argument
+            android:name="Id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cerrar_sesion"
+        android:name="com.cgs.vision.ui.CerrarSesion"
+        android:label="@string/menu_logout" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.cgs.vision.ui.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/repositorioPrivado"
+        android:name="com.cgs.vision.CodigoPrivadoFragment"
+        tools:layout="@layout/fragment_repositorio_privado"/>
+    <fragment
+        android:id="@+id/ajustes2"
+        android:name="com.cgs.vision.ui.Ajustes"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_ajustes" >
+        <action
+            android:id="@+id/action_ajustes2_to_cambios"
+            app:destination="@id/cambios" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayuda2"
+        android:name="com.cgs.vision.ui.Ayuda"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_ayuda" />
+    <fragment
+        android:id="@+id/cambios"
+        android:name="com.cgs.vision.ui.Cambios"
+        tools:layout="@layout/fragment_cambios">
+        <argument
+            android:name="tipo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtros"
+        android:label=" "
+        android:name="com.cgs.vision.ui.Filtros"
+        tools:layout="@layout/fragment_filtros">
+        <action
+            android:id="@+id/action_filtros_to_nav_explorar"
+            app:destination="@id/nav_explorar" />
+        <action
+            android:id="@+id/action_filtros_to_busqueda"
+            app:destination="@id/busqueda" />
+    </fragment>
+    <fragment
+        android:id="@+id/busqueda"
+        android:name="com.cgs.vision.ui.Busqueda"
+        tools:layout="@layout/fragment_busqueda">
+        <action
+            android:id="@+id/action_busqueda_to_nav_explorar"
+            app:destination="@id/nav_explorar" />
+        <action
+            android:id="@+id/action_busqueda_to_codigoPublicoFragment"
+            app:destination="@id/codigoPublicoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_grupos"
+        android:name="com.cgs.vision.ui.GruposFragment"
+        android:label=""
+        tools:layout="@layout/fragment_grupos" />
+    <activity
+        android:id="@+id/CPublico"
+        android:name="com.cgs.vision.CPublico"
+        android:label="activity_c_publico"
+        tools:layout="@layout/activity_c_publico" />
+</navigation>

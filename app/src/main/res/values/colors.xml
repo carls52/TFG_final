@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#ff0099cc</color>
+    <color name="colorPrimary">#0076a6</color>
+    <color name="background">#e1f5f9</color>
+    <color name="background2"> #b2e4f1</color>
+    <color name="subText">#0ea7da</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <color name="complementary">#CC3300</color>
+    <color name="analogous">#00cc99</color>
+
+
+    <color name="colorAccent">#03A9F4</color>
+    <color name="colorBlack">#000000</color>
+    <color name="cancel">#FF0000</color>
+
+
+    <color name="java">#ED8B00</color>
+    <color name="python">#4B8BBE</color>
+    <color name="c">#2ECC71</color>
+    <color name="cplus">#a83411</color>
+    <color name="txt">#919090</color>
+    <!-- #4f433f-->
+    <color name="javascript">#F0DB4F</color>
+</resources>
