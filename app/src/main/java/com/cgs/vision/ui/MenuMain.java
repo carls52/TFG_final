@@ -60,7 +60,7 @@ public class MenuMain extends AppCompatActivity {
                 nombre.setText(actual.getNombre());
                 mAppBarConfiguration = new AppBarConfiguration.Builder(
                         R.id.nav_home, R.id.nav_cPublicos, R.id.nav_grupos, R.id.nav_explorar,R.id.nav_favoritos,
-                        R.id.mainActivity,R.id.ajustes2,R.id.ayuda2)
+                        R.id.selectDialog,R.id.ajustes2,R.id.ayuda2)
                         .setDrawerLayout(drawer)
                         .build();
                 navController[0] = Navigation.findNavController(MenuMain.this, R.id.nav_host_fragment);

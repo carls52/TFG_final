@@ -274,31 +274,35 @@ public class CloudVision extends AppCompatActivity {
                                 case "PYTHON":
                                     List<Page> pages = response.getResponses().get(0).getFullTextAnnotation().getPages();
                                     List<Integer> coordenadas = new ArrayList<>();
-                                    for (Page p : pages) {
+                                    for (Page p : pages)
+                                    {
                                         List<Block> blocks = p.getBlocks();
-                                        for (Block b : blocks) {
-                                            String line = getBlockText(b);
-                                            int xBlock = Math.max(b.getBoundingBox().getVertices().get(0).getX(),
-                                                    b.getBoundingBox().getVertices().get(3).getX());
-
+                                        for (Block bloque : blocks)
+                                        {
+                                            String line = getBlockText(bloque);
+                                            int xBlock = Math.max(bloque.getBoundingBox().getVertices().get(0).getX(),
+                                                         bloque.getBoundingBox().getVertices().get(3).getX());
+                                            //Recorremos las coordenadas de cada linea que contiene el bloque analizado
                                             if(coordenadas.isEmpty())
                                                 coordenadas.add(xBlock);
                                             else if(xBlock > coordenadas.get(0))
                                             {
-                                                for(int i=0;i<coordenadas.size()-1;i++)
+                                                int size = coordenadas.size();
+                                                for(int i=0;i<size-1;i++)
                                                 {
                                                     if(xBlock < coordenadas.get(i) || xBlock == coordenadas.get(i) )
                                                     {
                                                         aux.append(sangrado(i));
                                                         break;
                                                     }
-                                                    else if(i == coordenadas.size()-1)
+                                                    else if(i == size-1)
                                                     {
                                                         coordenadas.add(xBlock);
+                                                        aux.append(sangrado(i+1));
                                                     }
                                                 }
                                             }
-                                            aux.append(line);
+                                            aux.append(line).append("\n");
                                         }
                                     }
                                     break;

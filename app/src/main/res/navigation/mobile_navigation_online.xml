@@ -142,4 +142,9 @@
         android:name="com.cgs.vision.CPublico"
         android:label="activity_c_publico"
         tools:layout="@layout/activity_c_publico" />
+    <activity
+        android:id="@+id/selectDialog"
+        android:name="com.cgs.vision.dialogos.SelectDialog"
+        android:label="activity_dialog_select"
+        tools:layout="@layout/activity_dialog_select" />
 </navigation>
